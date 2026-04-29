@@ -5,11 +5,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Web Page</title>
+
+    <style>
+        /* Estilos CSS */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.8s ease-out;
+        }
+
+        .card.show { transform: translateY(0); opacity: 1; }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid white;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        h1 { margin-bottom: 10px; font-size: 1.8rem; }
+        p { font-weight: 300; opacity: 0.9; line-height: 1.6; }
+
+        .btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 10px 25px;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover { background: #f0f0f0; transform: scale(1.05); }
+    </style>
 </head>
 <body>
 
-    <h1>Welcome to my project</h1>
-    <p>Sergio's web project</p>
+    <div class="card" id="mainCard">
+        <h1>¡Hola, soy Sergio!</h1>
+        <p>Bienvenido a mi espacio personal. Soy entusiasta de la tecnología y este es mi pequeño rincón en la web.</p>
+        <a href="#" class="btn" onclick="saludar()">¡Dime hola!</a>
+    </div>
 
+    <script>
+        // Animación de entrada al cargar
+        window.onload = () => {
+            document.getElementById('mainCard').classList.add('show');
+        };
+
+        // Función sencilla de JavaScript
+        function saludar() {
+            alert("¡Gracias por visitar mi página! 👋");
+            }
+    </script>
 </body>
 </html>
